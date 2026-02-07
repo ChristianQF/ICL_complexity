@@ -28,9 +28,9 @@ The analysis was performed using Python 3.x and requires the following libraries
 
 ## Usage
 
-1. Clone the repository: `git clone https://github.com/yourusername/ICL-Network-Analysis.git`
+1. Clone the repository: `git clone https://github.com/ChristianQF/ICL_complexity.git`
 2. Install dependencies: `pip install -r requirements.txt`
-3. Run the master notebook `Main_Analysis.ipynb` to regenerate the figures presented in the manuscript.
+3. Run the notebooks in directory `notebooks` to regenerate the figures presented in the manuscript.
 
 ## Citation
 
