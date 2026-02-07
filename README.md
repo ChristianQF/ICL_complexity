@@ -1,58 +1,41 @@
-# Protein Structure Network (PSN) Analysis: 6EDW-R
+# Supplementary Material: Topological Analysis of ICL Allostery
 
-This project presents a comprehensive computational study of the **Protein Structure Network (PSN)** of the 6EDW-R complex. By integrating **Graph Theory** with **Biophysical Characterization**, we identify critical residues that act as rigid communication hubs, likely responsible for allosteric signal transduction.
+This repository contains the source code, network datasets, and analytical pipelines used in the study: 
+**"Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis"**.
 
----
+## Overview
 
-## 🚀 Key Research Findings
+The scripts provided here allow for the reproduction of the Protein Structure Network (PSN) analysis of Isocitrate Lyase (ICL) in its various conformational states (PDB IDs: 6EDW, 6EDZ, and 6EE1). The workflow integrates graph theory, community detection, and resilience analysis to map allosteric communication pathways.
 
-* **Network Topology:** The protein network follows a **Log-Normal distribution** rather than a pure Power-Law, reflecting physical constraints in amino acid packing.
-* **Rigid Communication Hubs:** Found a significant negative correlation (**Spearman ρ: -0.341**, *p < 0.001*) between **Betweenness Centrality** and **B-Factor**.
-* **Allosteric Candidates:** Identified high-betweenness, low-flexibility residues—specifically **TRP-108 (Chain C)** and **TRP-457 (Chain D)**—as primary candidates for allosteric regulation.
-* **Community Modularization:** Detected structural communities using *Infomap* and *Girvan-Newman* algorithms, identifying functional domains that operate as semi-independent units.
+## Contents
 
----
+* `/data`: Graph representations (Edge lists and Node attributes) derived from ICL crystal structures.
+* `/scripts`: Python/Jupyter Notebooks for:
+    * **Centrality Analysis:** Calculation of Degree, Betweenness, Closeness, and Eigenvector metrics.
+    * **Community Detection:** Implementations of Infomap, Modularity, and Girvan-Newman algorithms.
+    * **Consensus Mapping:** Generation of Complete Consensus Matrices and 3D hub visualization scripts.
+    * **Percolation & Resilience:** Site percolation scripts for targeted attack vs. random failure simulations.
+    * **Null Models:** Generation and comparison with Erdős–Rényi (ER) and Barabási–Albert (BA) networks.
 
-## 🛠 Features & Methodology
+## Requirements
 
-### 1. Network Construction & Centrality
-* Built residue interaction networks using $C\alpha$ distances.
-* Calculated 7 centrality metrics: *Degree, Betweenness, Closeness, Eigenvector, PageRank, Hubs, and Authorities*.
-* Generated a **Consensus Persistence Ranking** to identify residues that remain important across all metrics.
+The analysis was performed using Python 3.x and requires the following libraries:
+* `NetworkX` (Network analysis)
+* `Infomap` (Community detection)
+* `Pandas` / `NumPy` (Data processing)
+* `Matplotlib` / `Seaborn` (Visualization)
+* `Py3Dmol` (3D structural mapping)
 
-### 2. Null Model Validation
-* Generated 10 **Erdős–Rényi (ER)** and 10 **Barabási–Albert (BA)** networks as null models.
-* Statistical comparison of Alpha ($\alpha$), Average Path Length, and Centrality distributions to prove the biological significance of the real network.
+## Usage
 
-### 3. Structural & Biophysical Integration
-* **SASA:** Calculated Solvent Accessible Surface Area.
-* **Flexibility:** Analyzed B-Factors to map residue mobility.
-* **Hidrophobicity:** Mapped Kyte-Doolittle scales to network nodes.
+1. Clone the repository: `git clone https://github.com/ChristianQF/ICL_complexity.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the notebooks in directory `notebooks` to regenerate the figures presented in the manuscript.
 
-### 4. 3D Interactive Visualization
-* Implemented **py3Dmol** for in-notebook 3D visualization.
-* Color-coded residues by community membership and network persistence.
+## Citation
 
----
-
-## 📊 Visualizations Included
-
-1.  **Correlation Plots:** Betweenness vs. B-Factor (Rigidity-Communication analysis).
-2.  **Histograms:** Node persistence across centrality measures.
-3.  **Boxplots:** Real network metrics vs. ER and BA null models.
-4.  **3D Structures:** Interactive PDB rendering of high-impact residues.
+If you use this code or the generated datasets in your research, please cite:
+> *Authors (Year). Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis. Journal Name (TBD).*
 
 ---
-
-## 📦 Requirements
-
-* `networkx`
-* `biopython`
-* `py3Dmol`
-* `pandas` / `numpy` / `seaborn`
-* `powerlaw`
-
----
-
-## 📝 Author
-*Project developed as part of an Advanced Structural Bioinformatics analysis.*
+**Contact:** [csolisc@unmsm.edu.pe] for any inquiries regarding the implementation or data.
