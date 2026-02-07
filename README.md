@@ -38,4 +38,4 @@ If you use this code or the generated datasets in your research, please cite:
 > *Authors (Year). Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis. Journal Name (TBD).*
 
 ---
-**Contact:** [Your Name/Email] for any inquiries regarding the implementation or data.
+**Contact:** [csolisc@unmsm.edu.pe] for any inquiries regarding the implementation or data.
