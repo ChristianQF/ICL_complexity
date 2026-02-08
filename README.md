@@ -35,7 +35,7 @@ The analysis was performed using Python 3.x and requires the following libraries
 ## Citation
 
 If you use this code or the generated datasets in your research, please cite:
-> Solis-Calero, Chrustian (2026). Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis. (UNMSM, Lima Perú).*
+> Solis-Calero, Christian (2026). Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis. (UNMSM, Lima Perú).*
 
 ---
 **Contact:** [csolisc@unmsm.edu.pe] for any inquiries regarding the implementation or data.
