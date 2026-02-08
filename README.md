@@ -3,6 +3,8 @@
 This repository contains the source code, network datasets, and analytical pipelines used in the study: 
 **"Topological Reorganization and Allosteric Signaling in Isocitrate Lyase: A Protein Structure Network Analysis"**.
 
+![GitHub Logo](https://github.com/ChristianQF/chemoinformatics/blob/main/Cover_figure.png)
+
 ## Overview
 
 The scripts provided here allow for the reproduction of the Protein Structure Network (PSN) analysis of Isocitrate Lyase (ICL) in its various conformational states (PDB IDs: 6EDW, 6EDZ, and 6EE1). The workflow integrates graph theory, community detection, and resilience analysis to map allosteric communication pathways.
