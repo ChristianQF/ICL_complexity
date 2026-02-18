@@ -14,6 +14,10 @@ import plotly.graph_objects as go
 import warnings
 from scipy.optimize import OptimizeWarning
 
+SEED = 42
+np.random.seed(SEED)
+random.seed(SEED)
+
 # ============================================
 # 1. ANALYZES THE CLUSTERING COEFFICIENT
 # ============================================
@@ -605,9 +609,11 @@ def visualize_3d_persistence_pro(df_key_residues, pdb_path='pdb_path', show_labe
 # 8. COMMUNITY ANALYSIS
 # ====================================================
 
-def analyze_and_visualize_infomap(G, csv_name="community_results.csv"):
+def analyze_and_visualize_infomap(G, csv_name="community_results.csv",  seed=None):
+    if seed is None:
+           	seed = SEED  # Using  global seed by default
     # 1. Infomap execution
-    im = Infomap("--silent")
+    im = Infomap(f"--silent --seed {seed}")
     mapping = im.add_networkx_graph(G)
     im.run()
 
@@ -659,7 +665,7 @@ def analyze_and_visualize_infomap(G, csv_name="community_results.csv"):
 # 9. COMPARATIVE COMMUNITY ANALYSIS
 # ====================================================
 
-def comparative_community_analysis(G, csv_file_name="community_comparison.csv"):
+def comparative_community_analysis(G, csv_file_name="community_comparison.csv", seed=None):
     # Initialize DataFrame with graph nodes
     nodes = list(G.nodes())
     df_final = pd.DataFrame({'Node': nodes})
@@ -667,8 +673,11 @@ def comparative_community_analysis(G, csv_file_name="community_comparison.csv"):
     # Define algorithms to execute
     # Each entry is: (Name, Algorithm_Function)
 
+    if seed is None:
+           	seed = SEED  # Using  global seed by default
+
     # 1. Infomap (separate logic as it's an external library)
-    im = Infomap("--silent")
+    im = Infomap(f"--silent --seed {seed}")
     mapping = im.add_networkx_graph(G)
     im.run()
     infomap_dict = {mapping[node.node_id]: node.module_id for node in im.tree if node.is_leaf}
